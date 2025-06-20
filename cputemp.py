@@ -33,7 +33,8 @@ NOTIFY_TIMEOUT = 5000
 class ThermometerAdvertisement(Advertisement):
     def __init__(self, index):
         Advertisement.__init__(self, index, "peripheral")
-        self.add_local_name("Thermometer")
+        self.add_local_name("PI CPU Thermometer")
+        self.add_service_uuid(ThermometerService.THERMOMETER_SVC_UUID)
         self.include_tx_power = True
 
 class ThermometerService(Service):
